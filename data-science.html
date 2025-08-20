@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Science Basic - Kurniawan Sandi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    canvas#codeBackground {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: #0f172a;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+  <!-- Background Animasi -->
+  <canvas id="codeBackground"></canvas>
+
+  <!-- Navbar mini -->
+  <header class="bg-slate-800/80 backdrop-blur-md fixed top-0 left-0 w-full shadow z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-sky-400 font-bold text-lg">Data Science Basic</h1>
+      <a href="index.html#projects" class="text-sky-300 hover:text-sky-400 flex items-center gap-1">
+        <i data-lucide="arrow-left"></i> Kembali
+      </a>
+    </div>
+  </header>
+
+  <!-- Konten -->
+  <section class="section pt-28">
+    <div class="max-w-4xl mx-auto px-6 card-dark p-10 animate__animated animate__fadeInUp">
+      <h2 class="text-3xl font-bold text-sky-400 mb-6 text-center">Proyek Data Science Basic</h2>
+      <img src="assets/img/celerates.jpg" alt="Data Science Basic" class="rounded-lg shadow-lg mb-8 mx-auto block">
+
+      <p class="text-slate-300 leading-relaxed">
+        Proyek Data Science Basic adalah hasil dari <b>Program Studi Independen (MSIB)</b> yang berfokus pada
+        penguasaan konsep fundamental <b>Data Science</b>, mulai dari pengolahan data hingga membangun model machine learning sederhana.
+      </p>
+
+      <h3 class="text-xl font-semibold text-sky-400 mt-6">Fitur Utama</h3>
+      <ul class="list-disc ml-6 mt-2 text-slate-400">
+        <li>Pembersihan & preprocessing data</li>
+        <li>Eksplorasi data dengan Python</li>
+        <li>Visualisasi data interaktif</li>
+        <li>Model regresi & klasifikasi</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-sky-400 mt-6">Teknologi</h3>
+      <ul class="list-disc ml-6 mt-2 text-slate-400">
+        <li>Python (Pandas, NumPy, Scikit-learn, Matplotlib)</li>
+        <li>Google Colab</li>
+        <li>SQL untuk manajemen data</li>
+        <li>GitHub untuk kolaborasi</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-sky-400 mt-6">Hasil & Dampak</h3>
+      <p class="text-slate-300 leading-relaxed">
+        Proyek ini memperkuat pemahaman saya tentang alur kerja seorang <b>Data Scientist</b>: mulai dari
+        data mentah hingga model prediksi. Hal ini mendukung saya untuk berkarir di bidang <b>Data Analyst</b>,
+        <b>Machine Learning Engineer</b>, maupun <b>Data Engineer</b>.
+      </p>
+    </div>
+  </section>
+
+  <script>lucide.createIcons();</script>
+
+  <!-- Animasi Code Background -->
+  <script>
+    const canvas = document.getElementById("codeBackground");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const codeSymbols = ["<div>", "if()", "for{}", "while()", "print()", "int main()", "def()", "=>", "</>"];
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+    function draw() {
+      ctx.fillStyle = "rgba(15, 23, 42, 0.2)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#38bdf8";
+      ctx.font = fontSize + "px monospace";
+      for (let i = 0; i < drops.length; i++) {
+        const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 50);
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

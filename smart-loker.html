@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Loker - Kurniawan Sandi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    canvas#codeBackground {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: #0f172a;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+  <!-- Background Animasi -->
+  <canvas id="codeBackground"></canvas>
+
+  <!-- Navbar mini -->
+  <header class="bg-slate-800/80 backdrop-blur-md fixed top-0 left-0 w-full shadow z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-sky-400 font-bold text-lg">Smart Loker</h1>
+      <a href="index.html#projects" class="text-sky-300 hover:text-sky-400 flex items-center gap-1">
+        <i data-lucide="arrow-left"></i> Kembali
+      </a>
+    </div>
+  </header>
+
+  <!-- Konten -->
+  <section class="section pt-28">
+    <div class="max-w-4xl mx-auto px-6 card-dark p-10 animate__animated animate__fadeInUp">
+      <h2 class="text-3xl font-bold text-sky-400 mb-6 text-center">Proyek Smart Loker</h2>
+      <img src="assets/img/pnj.jpg" alt="Smart Loker" class="rounded-lg shadow-lg mb-8 mx-auto block">
+
+      <p class="text-slate-300 leading-relaxed">
+        Smart Loker adalah proyek <b>IoT</b> untuk penyimpanan barang aman dengan autentikasi <b>fingerprint</b>.
+        Solusi ini menggantikan kunci fisik tradisional dan mendukung monitoring real-time melalui aplikasi.
+      </p>
+
+      <h3 class="text-xl font-semibold text-sky-400 mt-6">Fitur Utama</h3>
+      <ul class="list-disc ml-6 mt-2 text-slate-400">
+        <li>Autentikasi sidik jari</li>
+        <li>Database pengguna terintegrasi</li>
+        <li>Monitoring via aplikasi</li>
+        <li>Notifikasi real-time</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-sky-400 mt-6">Teknologi</h3>
+      <ul class="list-disc ml-6 mt-2 text-slate-400">
+        <li>ESP32 / Arduino</li>
+        <li>Sensor Fingerprint</li>
+        <li>MySQL Database</li>
+        <li>Aplikasi Web/Mobile</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-sky-400 mt-6">Hasil & Dampak</h3>
+      <p class="text-slate-300 leading-relaxed">
+        Sistem ini membuat penyimpanan barang lebih <b>praktis</b> dan <b>terjamin keamanannya</b>,
+        cocok untuk kampus, kantor, dan fasilitas umum.
+      </p>
+    </div>
+  </section>
+
+  <script>lucide.createIcons();</script>
+
+  <!-- Animasi Code Background -->
+  <script>
+    const canvas = document.getElementById("codeBackground");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const codeSymbols = ["<div>", "if()", "for{}", "while()", "print()", "int main()", "def()", "=>", "</>"];
+    const fontSize = 16;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+    function draw() {
+      ctx.fillStyle = "rgba(15, 23, 42, 0.2)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#38bdf8";
+      ctx.font = fontSize + "px monospace";
+      for (let i = 0; i < drops.length; i++) {
+        const text = codeSymbols[Math.floor(Math.random() * codeSymbols.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.95) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 50);
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
