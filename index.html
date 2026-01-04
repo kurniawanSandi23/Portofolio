@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Kurniawan Sandi - IoT, Network Engineering, dan Dashboard Development.">
+  <title>Kurniawan Sandi | Portofolio Profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar" role="banner">
+  <div class="container nav-inner">
+    <div class="logo" aria-hidden="true">Kurniawan<span>Sandi</span></div>
+
+    <nav id="site-nav" class="nav-links" role="navigation">
+      <a href="#tentang">Tentang</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#pengalaman">Pengalaman</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button id="btn-menu" class="menu-btn" aria-label="Buka menu" aria-expanded="false" aria-controls="site-nav">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <p class="eyebrow">Halo, saya</p>
+      <h1>
+        Kurniawan Sandi<span> Siap Bekerja di Berbagai Peran</span>
+      </h1>
+      <p class="lead">Engineer teknis yang fleksibel dan siap melamar di berbagai peran mulai perangkat tertanam dan infrastruktur jaringan hingga pengembangan web, automasi, dan integrasi sistem. Cepat beradaptasi, pragmatis, dan berorientasi hasil.</p>
+
+      <div class="cta-group">
+        <a href="#proyek" class="btn-primary">Lihat Proyek Unggulan</a>
+        <a href="mailto:emailkamu@email.com" class="btn-outline">Hubungi Saya</a>
+      </div>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/kurniawan-sandi-a44a5724b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/6289518573420" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:kurniawan.sandi.tik22@mhsw.pnj.ac.id">Email</a>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Profil singkat">
+      <h3>Kurniawan Sandi</h3>
+      <p class="muted">IoT • Monitoring • Network Engineering</p>
+
+      <ul class="bullets">
+        <li>Pengalaman proyek industri & magang profesional</li>
+        <li>ESP32 | LoRa | MQTT | Firebase</li>
+        <li>Dashboard & Integrasi WhatsApp Bot</li>
+      </ul>
+
+      <a class="btn-primary" href="mailto:emailkamu@email.com">Beri Tawaran Kerja</a>
+    </aside>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section class="section" id="tentang">
+  <div class="container">
+    <h2>Latar Belakang</h2>
+    <p>Saya adalah engineer teknis yang fleksibel, siap bekerja di berbagai peran dan industri. Dengan latar pendidikan D4 Teknik Multimedia & Jaringan serta pengalaman proyek dan magang industri, saya terbiasa mengembangkan solusi dari prototyping sampai implementasi, mengutamakan keandalan, skalabilitas, dan kemudahan pemeliharaan.</p>
+    <ul>
+      <li><strong>Pendidikan:</strong> D4 Teknik Multimedia & Jaringan - Politeknik Negeri Jakarta</li>
+    </ul>
+  </div>
+</section>
+
+<!-- KEAHLIAN -->
+<section class="section soft" id="keahlian">
+  <div class="container">
+    <h2>Keahlian Teknis</h2>
+    <div class="grid skills">
+      <div class="card">
+        <h3>Embedded & IoT</h3>
+        <p>Firmware dan integrasi perangkat tertanam (ESP32, sensor, protokol komunikasi).</p>
+      </div>
+      <div class="card">
+        <h3>Network & Infrastruktur</h3>
+        <p>Routing, switching, manajemen jaringan, dan konektivitas skala lapangan.</p>
+      </div>
+      <div class="card">
+        <h3>Software & Web</h3>
+        <p>Python, JavaScript, pembuatan dashboard, dan API integration.</p>
+      </div>
+      <div class="card">
+        <h3>Otomasi & Integrasi</h3>
+        <p>Scripting, automasi operasi, CI/CD dasar, dan integrasi antar-sistem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYEK -->
+<section class="section" id="proyek">
+  <div class="container">
+    <h2>Proyek Unggulan</h2>
+    <div class="grid projects">
+      <article class="project-card reveal">
+        <div class="project-body">
+          <h3>Smart Greenhouse</h3>
+          <p class="muted">IoT · Monitoring · WhatsApp Bot</p>
+          <p class="project-desc">Sistem otomatisasi greenhouse untuk monitoring suhu & kelembaban dengan kontrol kipas otomatis dan notifikasi real-time via WhatsApp.</p>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-body">
+          <h3>Monitoring Forklift</h3>
+          <p class="muted">LoRa · Dashboard · Industri</p>
+          <p class="project-desc">Sistem monitoring posisi & status forklift berbasis LoRa dengan dashboard lokal untuk monitoring forklift.</p>
+        </div>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-body">
+          <h3>Smart Locker</h3>
+          <p class="muted">Security · IoT</p>
+          <p class="project-desc">Loker pintar dengan autentikasi sidik jari dan kontrol akses terpusat untuk keamanan yang lebih baik.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PENGALAMAN -->
+<section class="section soft" id="pengalaman">
+  <div class="container">
+    <h2>Pengalaman</h2>
+    <div class="timeline">
+      <div class="experience"><strong>PT Nexwave</strong><p>MS Huawei FO BO XL-Smart Jabodetabek 2025 - 23 Agustus s/d 10 Oktober 2025</p></div>
+      <div class="experience"><strong>PT Komatsu Indonesia</strong><p>Sistem Monitoring Forklift Real-Time Berbasis LoRa - 14 Oktober s/d 19 Desember 2025</p></div>
+      <div class="experience"><strong>PT Tera Data Indonusa</strong><p>Factory Stay Program (FSP)</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-social">
+      <a href="https://www.linkedin.com/in/kurniawan-sandi-a44a5724b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://wa.me/6289518573420" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="milto:kurniawan.sandi.tik22@mhsw.pnj.ac.id">Email</a>
+    </div>
+    <p>© 2026 Kurniawan Sandi - Portofolio</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
